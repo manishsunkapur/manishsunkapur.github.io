@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Er. Manish Sunkapur — Product Manager focused on industrial SaaS, AI, and enterprise manufacturing workflows.">
+  <title>Er. Manish Sunkapur | Product Manager</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #102b29;
+      --ink-soft: #244543;
+      --muted: #617774;
+      --line: #d8e3df;
+      --paper: #f5f8f5;
+      --card: #ffffff;
+      --green: #17634f;
+      --green-dark: #0d302c;
+      --mint: #dff1e9;
+      --mint-strong: #9ed6bf;
+      --amber: #f4d18a;
+      --amber-ink: #76521b;
+      --blue: #e8f0f8;
+      --shadow: 0 18px 50px rgba(19, 49, 43, .08);
+      --radius: 20px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.65; }
+    a { color: inherit; }
+    .shell { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: rgba(245,248,245,.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(216,227,223,.8); }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 750; letter-spacing: -.02em; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--green-dark); color: white; font-size: 13px; letter-spacing: .06em; }
+    nav { display: flex; align-items: center; gap: 28px; font-size: 14px; color: var(--muted); }
+    nav a { text-decoration: none; }
+    nav a:hover, .text-link:hover { color: var(--green); }
+    .hero { position: relative; overflow: hidden; min-height: 410px; padding: 62px 64px; border-radius: 28px; color: white; background: radial-gradient(circle at 85% 20%, rgba(103, 178, 148, .3), transparent 30%), linear-gradient(125deg, #0e312d 0%, #174a3c 62%, #1a604b 100%); box-shadow: var(--shadow); }
+    .hero::after { content: ""; position: absolute; width: 390px; height: 390px; right: -110px; bottom: -260px; border: 1px solid rgba(221, 245, 235, .18); border-radius: 50%; box-shadow: 0 0 0 38px rgba(221,245,235,.035), 0 0 0 78px rgba(221,245,235,.025); }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); gap: 56px; align-items: center; }
+    .eyebrow { color: var(--mint-strong); font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 700px; margin: 15px 0 18px; font-size: clamp(38px, 5vw, 62px); line-height: 1.06; letter-spacing: -.055em; }
+    .hero-copy { max-width: 600px; color: #d1e5dd; font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 0 17px; border: 1px solid transparent; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform .18s ease, background .18s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-light { background: white; color: var(--green-dark); }
+    .button-outline { color: white; border-color: rgba(255,255,255,.34); background: rgba(255,255,255,.04); }
+    .project-card { position: relative; z-index: 1; padding: 23px; color: var(--ink); background: rgba(250, 253, 250, .96); border: 1px solid rgba(255,255,255,.65); border-radius: 20px; box-shadow: 0 16px 35px rgba(0,0,0,.12); }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .project-icon { width: 42px; height: 42px; display: grid; place-items: center; color: var(--green); background: var(--mint); border-radius: 13px; font-weight: 850; }
+    .pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 9px; border-radius: 999px; background: var(--mint); color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .dot { width: 6px; height: 6px; background: #328664; border-radius: 50%; }
+    .project-card h2 { margin: 21px 0 6px; font-size: 23px; letter-spacing: -.035em; }
+    .project-card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .identity { display: flex; align-items: center; gap: 15px; }
+    .portrait { width: 86px; height: 86px; flex: 0 0 auto; object-fit: cover; object-position: center 32%; border: 3px solid white; border-radius: 22px; box-shadow: 0 5px 18px rgba(16,43,41,.14); }
+    .identity h2 { margin: 0 0 3px; font-size: 19px; line-height: 1.2; letter-spacing: -.03em; }
+    .identity p { color: var(--muted); font-size: 12px; }
+    .identity .location { margin-top: 5px; font-size: 11px; }
+    .mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 21px; }
+    .mini-stat { padding: 12px; background: #f1f6f3; border-radius: 12px; }
+    .mini-stat strong { display: block; color: var(--green-dark); font-size: 20px; letter-spacing: -.03em; }
+    .mini-stat span { font-size: 11px; color: var(--muted); }
+    .note { margin-top: 13px !important; font-size: 11px !important; }
+    .section { padding: 84px 0 0; scroll-margin-top: 92px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 27px; }
+    .kicker { margin-bottom: 9px; color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h2.section-title { max-width: 700px; margin: 0; font-size: clamp(30px, 4vw, 42px); line-height: 1.13; letter-spacing: -.045em; }
+    .section-intro { max-width: 520px; margin: 0; color: var(--muted); font-size: 15px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .card { padding: 25px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 5px 20px rgba(18, 55, 45, .035); }
+    .card h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.3; letter-spacing: -.025em; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .card p + p { margin-top: 12px; }
+    .experience-list { display: grid; gap: 14px; }
+    .experience-card { display: grid; grid-template-columns: 220px 1fr; gap: 22px; padding: 23px 25px; background: white; border: 1px solid var(--line); border-radius: 17px; box-shadow: 0 5px 20px rgba(18,55,45,.035); }
+    .experience-date { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .experience-company { margin-top: 7px; color: var(--muted); font-size: 13px; }
+    .experience-card h3 { margin: 0 0 7px; font-size: 18px; }
+    .experience-card p, .experience-card li { color: var(--muted); font-size: 13px; }
+    .experience-card ul { margin: 10px 0 0; padding-left: 18px; }
+    .experience-card li + li { margin-top: 5px; }
+    .skill-list { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
+    .hire-note { padding: 28px; color: white; background: linear-gradient(120deg, #103b34, #17634f); border-radius: 20px; box-shadow: var(--shadow); }
+    .hire-note .kicker { color: var(--mint-strong); }
+    .hire-note h3 { margin: 0 0 9px; font-size: 21px; }
+    .hire-note p { max-width: 900px; margin: 0; color: #d9ebe3; font-size: 15px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .contact-links a { padding: 9px 12px; color: var(--green); background: var(--mint); border-radius: 10px; font-size: 12px; font-weight: 750; text-decoration: none; }
+    .big-number { margin: 13px 0 4px; color: var(--green); font-size: 33px; font-weight: 800; letter-spacing: -.06em; }
+    .callout { padding: 18px 20px; color: #5e4c27; background: #fff5df; border: 1px solid #f0dcae; border-radius: 14px; font-size: 13px; }
+    .callout strong { color: #5b4219; }
+    blockquote { margin: 18px 0 0; padding: 19px 21px; border-left: 3px solid var(--green); background: #f2f7f4; border-radius: 0 14px 14px 0; color: var(--ink-soft); font-size: 17px; }
+    .decision { min-height: 183px; }
+    .decision-num { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-bottom: 16px; border-radius: 9px; color: var(--green); background: var(--mint); font-size: 12px; font-weight: 800; }
+    .flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; counter-reset: flow; }
+    .flow-step { position: relative; min-height: 166px; padding: 20px; background: white; border: 1px solid var(--line); border-radius: 16px; counter-increment: flow; }
+    .flow-step::before { content: "0" counter(flow); display: block; margin-bottom: 17px; color: var(--green); font-size: 11px; font-weight: 850; letter-spacing: .1em; }
+    .flow-step:not(:last-child)::after { content: "→"; position: absolute; top: 20px; right: -15px; z-index: 1; display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--muted); font-size: 13px; }
+    .flow-step h3 { margin: 0 0 7px; font-size: 16px; }
+    .flow-step p { margin: 0; color: var(--muted); font-size: 12px; }
+    .framework { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .framework .card { padding: 20px; }
+    .framework .step-label { color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .framework h3 { margin-top: 7px; }
+    .metric-card { min-height: 176px; }
+    .metric-type { display: inline-block; margin-bottom: 12px; color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .issue-list { display: grid; gap: 9px; }
+    .issue { display: grid; grid-template-columns: 72px 1fr auto; gap: 16px; align-items: center; padding: 15px 16px; background: white; border: 1px solid var(--line); border-radius: 13px; text-decoration: none; transition: border-color .18s ease, transform .18s ease; }
+    .issue:hover { border-color: #88bea8; transform: translateX(3px); }
+    .issue-key { color: var(--green); font-size: 12px; font-weight: 850; }
+    .issue-name { font-size: 14px; font-weight: 700; }
+    .issue-kind { color: var(--muted); font-size: 11px; }
+    .issue-arrow { color: var(--muted); }
+    .guardrail-panel { padding: 32px; color: white; background: var(--green-dark); border-radius: 23px; }
+    .guardrail-panel .kicker { color: var(--mint-strong); }
+    .guardrail-panel h2 { max-width: 680px; margin: 0 0 12px; font-size: 31px; line-height: 1.15; letter-spacing: -.04em; }
+    .guardrail-panel > p { max-width: 760px; color: #cfe2da; font-size: 14px; }
+    .guardrail-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 24px; }
+    .guardrail { padding: 17px; border: 1px solid rgba(229,246,238,.18); border-radius: 14px; background: rgba(255,255,255,.045); }
+    .guardrail strong { display: block; margin-bottom: 7px; color: #e8fff4; font-size: 14px; }
+    .guardrail span { color: #c3d9d0; font-size: 12px; }
+    .prototype-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: var(--mint-strong); font-size: 14px; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .status-item { padding: 17px; background: #f2f7f4; border-radius: 13px; }
+    .status-item strong { display: block; margin-bottom: 4px; font-size: 13px; }
+    .status-item span { color: var(--muted); font-size: 12px; }
+    footer { margin-top: 84px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 26px 0 36px; color: var(--muted); font-size: 12px; }
+    .text-link { color: var(--green); font-weight: 700; text-decoration: none; }
+    @media (max-width: 850px) {
+      .hero { padding: 42px 32px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .project-card { max-width: 460px; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .flow, .framework { grid-template-columns: 1fr 1fr; }
+      .flow-step:nth-child(2)::after { display: none; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 13px; }
+      .experience-card { grid-template-columns: 1fr; gap: 8px; }
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(100% - 26px, 1160px); }
+      .topbar { height: auto; min-height: 66px; align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 10px; }
+      nav { width: 100%; gap: 18px; overflow-x: auto; white-space: nowrap; padding-bottom: 3px; font-size: 12px; }
+      .hero { min-height: auto; padding: 34px 23px; border-radius: 22px; }
+      h1 { font-size: 39px; }
+      .hero-copy { font-size: 15px; }
+      .section { padding-top: 62px; }
+      .grid-2, .grid-3, .flow, .framework, .guardrail-grid, .status-grid { grid-template-columns: 1fr; }
+      .flow-step { min-height: auto; }
+      .flow-step:not(:last-child)::after { top: auto; right: 16px; bottom: -15px; transform: rotate(90deg); }
+      .flow-step:nth-child(2)::after { display: grid; }
+      .issue { grid-template-columns: 60px 1fr auto; gap: 10px; }
+      .guardrail-panel { padding: 25px 20px; }
+      .guardrail-panel h2 { font-size: 27px; }
+      .footer-inner { align-items: start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#top" aria-label="Product portfolio home">
+      <span class="brand-mark">MS</span><span>Er. Manish Sunkapur</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#profile">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#cv">CV</a>
+    </nav>
+  </header>
+
+  <main id="top" class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Product Manager · Industrial SaaS, AI & ERP/MES</div>
+          <h1 id="hero-title">I turn complex industrial workflows into products teams can trust.</h1>
+          <p class="hero-copy">Product Manager and AI Product Specialist with 6+ years across enterprise software, industrial AI, customer-facing technical roles and manufacturing workflows. I connect customer problems, engineering decisions and delivery evidence.</p>
+          <div class="actions">
+            <a class="button button-light" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+            <a class="button button-outline" href="assets/CV_Manish_Sunkapur.pdf" download="Manish_Sunkapur_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <aside class="project-card" aria-label="Profile and featured project">
+          <div class="identity"><img class="portrait" src="assets/manish-sunkapur.jpg" alt="Portrait of Er. Manish Sunkapur"><div><h2>Er. Manish Sunkapur</h2><p>Product Manager · Industrial AI</p><p class="location">Hometown: Belgaum, Karnataka<br>CV location: Bengaluru, India</p></div></div>
+          <div class="card-top" style="margin-top:20px"><span class="project-icon">QI</span><span class="pill"><span class="dot"></span> Featured concept</span></div>
+          <h2>Quality Intelligence</h2>
+          <p>Guided defect investigation for manufacturing quality workflows.</p>
+          <div class="mini-stats">
+            <div class="mini-stat"><strong>50 → 22 min</strong><span>Reported newer vs experienced engineer median</span></div>
+            <div class="mini-stat"><strong>96%</strong><span>Accuracy guardrail stated for validation</span></div>
+          </div>
+          <p class="note">Reported inputs, not independently verified results. The prototype uses fictional records.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="profile" aria-labelledby="profile-title">
+      <div class="section-head">
+        <div><div class="kicker">About</div><h2 class="section-title" id="profile-title">Product leadership grounded in the realities of industry.</h2></div>
+        <p class="section-intro">A product professional who can work across plant operations, enterprise systems, customer needs and engineering teams.</p>
+      </div>
+      <article class="card"><h3>Profile</h3><p>I’m Er. Manish Sunkapur, a Product Manager and AI Product Specialist with 6+ years across B2B enterprise software, industrial AI, machine vision and customer-facing technical work. My experience spans discovery, requirements, PRDs and user stories, technical interface definition, UAT, launches and adoption. I bring an engineering education and an MBA in Marketing & Systems Management.</p></article>
+      <div class="hire-note" style="margin-top:16px"><div class="kicker">Why hire me</div><h3>I bridge the plant floor, the customer and the engineering team.</h3><p>I’ve translated manufacturing needs into ERP/MES-connected product requirements, helped take an edge AI camera product to launch, and led discovery through technical specifications and UAT. I can turn complex operational problems into clear, testable product work while keeping users, feasibility and delivery aligned.</p></div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section-head">
+        <div><div class="kicker">Experience</div><h2 class="section-title" id="experience-title">Product, growth and technical work across industrial technology.</h2></div>
+        <p class="section-intro">A concise view of roles and contributions from the CV. Outcomes are described without adding unsupported metrics.</p>
+      </div>
+      <div class="experience-list">
+        <article class="experience-card"><div><div class="experience-date">Apr 2024 – Present</div><div class="experience-company">DataSensor India / Qualitas Tech</div></div><div><h3>Senior Product Specialist & Technical PM</h3><ul><li>Lead requirements and delivery for cloud and on-prem production tracking, traceability and shop-floor monitoring products connected to enterprise ERP.</li><li>Run discovery with plant managers, enterprise architects and operations SMEs; translate needs into PRDs, user stories and system boundary conditions.</li><li>Specify REST API contracts, SQL schemas and synchronization between shop-floor SCADA/MES and SAP, Oracle or custom ERP systems.</li><li>Lead POC feasibility and UAT criteria; use telemetry and adoption data to guide workflow improvements.</li></ul></div></article>
+        <article class="experience-card"><div><div class="experience-date">Aug 2022 – Mar 2024</div><div class="experience-company">SensoVision Systems Private Limited</div></div><div><h3>Marketing Manager (Product & Growth)</h3><ul><li>Owned the cross-functional launch of an AI Smart Camera, turning computer-vision research into edge-deployed inspection product packages.</li><li>Developed go-to-market positioning and technical narratives for industrial automation customers.</li><li>Created customer feedback loops that fed software and optical hardware improvements into engineering backlogs.</li><li>Defined local SQL and cloud dashboard requirements for yield monitoring and quality reporting.</li></ul></div></article>
+        <article class="experience-card"><div><div class="experience-date">Jun 2021 – Jul 2022</div><div class="experience-company">KEYENCE India</div></div><div><h3>Sales Engineer</h3><ul><li>Translated manufacturing applications into technical solutions across sensors, machine vision and laser measurement.</li><li>Ran live demonstrations, feasibility tests and sensor validation trials on customer assembly lines.</li></ul></div></article>
+        <article class="experience-card"><div><div class="experience-date">Oct 2020 – Jun 2021</div><div class="experience-company">BYJU'S</div></div><div><h3>Business Development Associate</h3><ul><li>Conducted customer discovery, documented needs and advised clients on technology-enabled learning products.</li></ul></div></article>
+        <article class="experience-card"><div><div class="experience-date">Jan 2020 – Oct 2020</div><div class="experience-company">Zomato</div></div><div><h3>Campus Manager (Operations & Growth)</h3><ul><li>Coordinated merchant onboarding, operations and growth campaigns, using user feedback to support activation and engagement.</li></ul></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="section-head">
+        <div><div class="kicker">Skills and evidence</div><h2 class="section-title" id="skills-title">Show what you can do, and what backs it up.</h2></div>
+        <p class="section-intro">Skills below are drawn from your CV. Project evidence and the CV provide the basis for each capability; tools are not presented as proof of mastery by themselves.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card"><span class="metric-type">Product leadership</span><h3>Strategy, lifecycle and prioritization</h3><p>Roadmaps, product lifecycle management, MVP definition, feature prioritization, competitor analysis and go-to-market strategy.</p></article>
+        <article class="card"><span class="metric-type">Customer and product discovery</span><h3>From operational need to requirements</h3><p>Discovery workshops with plant managers, architects and operations SMEs; requirements elicitation, customer feedback loops and workflow improvement.</p></article>
+        <article class="card"><span class="metric-type">Agile product delivery</span><h3>Requirements through release</h3><p>PRDs/FRDs, user stories, story mapping, backlog grooming, sprint planning, Jira, Confluence, UAT, defect tracking and release management.</p></article>
+        <article class="card"><span class="metric-type">Technical product management</span><h3>Enterprise and shop-floor systems</h3><p>REST API contracts, SQL schemas, local-to-cloud synchronization, ERP/MES interfaces, SCADA data exchange and cloud/on-prem deployments.</p></article>
+        <article class="card"><span class="metric-type">Industrial AI product exposure</span><h3>Machine vision and connected workflows</h3><p>Smart cameras, edge-to-cloud workflows, defect detection, surface inspection, OCR, dimensional measurement, traceability and AIDC/RFID.</p></article>
+        <article class="card"><span class="metric-type">Tools and analytics</span><h3>Product, data and collaboration tools</h3><p>Jira, Confluence, Miro, Notion, Figma, Lovable, SQL, Postman, Power BI, cloud analytics portals, Salesforce and HubSpot.</p></article>
+      </div>
+      <div class="grid-2" style="margin-top:16px"><article class="card"><span class="metric-type">Professional development</span><h3>Certifications and programs</h3><p>Atlassian Jira Agile Management — listed as certified/proficient on the CV. McKinsey Forward Program — completed.</p></article><article class="card"><span class="metric-type">Education</span><h3>Engineering foundation + business training</h3><p>MBA, Marketing & Systems Management — Dayananda Sagar Institutions, 2020.<br>B.E., Information Science & Engineering — SDM College of Engineering & Technology, 2018.</p></article></div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <div><div class="kicker">Selected projects</div><h2 class="section-title" id="projects-title">Case studies that show the reasoning behind the work.</h2></div>
+        <p class="section-intro">Each project can use the same structure: problem and evidence, user job, options and trade-offs, solution, measures, validation, delivery and what changed.</p>
+      </div>
+      <div class="grid-2">
+        <a class="card text-link" href="#case-study" style="text-decoration:none"><span class="metric-type">Project 01 · In progress</span><h3>Quality Intelligence</h3><p>Help manufacturing quality engineers find and verify the right investigation record during downtime.</p><p><strong>View the case study ↓</strong></p></a>
+        <article class="card"><span class="metric-type">Project 02 · Future slot</span><h3>Add your next project</h3><p>Use this space for the next product you build. Keep its evidence, users, decisions and outcomes distinct from this case study.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="case-study" aria-labelledby="problem-title">
+      <div class="section-head">
+        <div><div class="kicker">Project 01 · Quality Intelligence · 01 The problem</div><h2 class="section-title" id="problem-title">Finding the right report is part of the investigation.</h2></div>
+        <p class="section-intro">When production downtime occurs, operators can spend too long identifying the defect and deciding which report to pull. Newer engineers reportedly take longer than experienced engineers, and relevant information is split across two systems.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>What we know so far</h3>
+          <p>Earlier project discussion reported a 50-minute median for newer engineers and 22 minutes for experienced engineers. Wrong record or parameter selection and weak SOP-to-information links were also reported.</p>
+          <p>These figures and observations still need source, cohort, sample and time-window verification. Downtime impact has not been quantified.</p>
+        </article>
+        <article class="card">
+          <h3>The user’s job to be done</h3>
+          <blockquote>When downtime occurs and I have a clue about the defect, help me identify it and verify the right report, record and parameter so I can continue the investigation faster without guessing or lowering accuracy.</blockquote>
+        </article>
+      </div>
+      <div class="callout" style="margin-top:16px"><strong>Evidence boundary:</strong> the summary comes from earlier project discussion, not a verbatim customer interview in this thread. The clickable demo is a concept, not a live manufacturing system.</div>
+    </section>
+
+    <section class="section" id="approach" aria-labelledby="approach-title">
+      <div class="section-head">
+        <div><div class="kicker">02 · Product decisions</div><h2 class="section-title" id="approach-title">Investigate first. Choose a small, testable solution.</h2></div>
+        <p class="section-intro">I used the Double Diamond as a way to explain the work: understand the challenge, define the problem, develop and test options, then plan safe delivery.</p>
+      </div>
+      <div class="framework">
+        <article class="card"><span class="step-label">Discover</span><h3>Understand the task</h3><p>Map who investigates, where time is lost, which systems and SOPs are used, and when people need help.</p></article>
+        <article class="card"><span class="step-label">Define</span><h3>Make success clear</h3><p>Frame the need as finding and confirming the correct record and parameter without reducing accuracy.</p></article>
+        <article class="card"><span class="step-label">Develop</span><h3>Compare approaches</h3><p>Start with guided retrieval and human confirmation; validate the flow before investing in prediction.</p></article>
+        <article class="card"><span class="step-label">Deliver</span><h3>Gate release on evidence</h3><p>Define metrics, source dependencies, quality tests, pilot access and incident response before release.</p></article>
+      </div>
+      <div class="grid-3" style="margin-top:16px">
+        <article class="card decision"><span class="decision-num">01</span><h3>Search before guidance</h3><p>The engineer needs to identify the relevant record before an SOP or investigation guidance can be trusted.</p></article>
+        <article class="card decision"><span class="decision-num">02</span><h3>One clue, filters optional</h3><p>Start with what the engineer knows—ID, part, line, symptom or parameter—then narrow results if needed.</p></article>
+        <article class="card decision"><span class="decision-num">03</span><h3>Defer broad AI prediction</h3><p>The current evidence points to retrieval and selection problems. Prediction need, data readiness and validation are not established.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="flow-title">
+      <div class="section-head">
+        <div><div class="kicker">03 · Proposed experience</div><h2 class="section-title" id="flow-title">Keep the engineer in control of every decision.</h2></div>
+        <p class="section-intro">The prototype flow makes the source and uncertainty visible, and it withholds guidance until the user confirms both the record and the parameter.</p>
+      </div>
+      <div class="flow" aria-label="Four-step guided investigation flow">
+        <article class="flow-step"><h3>Search</h3><p>Enter one clue. Search approved sources with optional filters.</p></article>
+        <article class="flow-step"><h3>Compare records</h3><p>See source, key details and why each candidate matched.</p></article>
+        <article class="flow-step"><h3>Review & confirm</h3><p>Select the record and parameter. Change either before confirming.</p></article>
+        <article class="flow-step"><h3>Open guidance</h3><p>Show approved guidance only after confirmation. Offer safe next steps for ambiguity or outages.</p></article>
+      </div>
+      <div class="grid-2" style="margin-top:18px">
+        <article class="card"><h3>Exception paths are part of the design</h3><p>Exact match, contextual match, ambiguous results, no results and a source outage each need a clear explanation and next action. A failed source must not look like a complete search.</p></article>
+        <article class="card"><h3>Prototype feedback changed the requirements</h3><p>In the demo, the fictional ID NC-2048 returned four candidates without explaining why. The next revision should show match reasons, distinguish exact from contextual evidence and keep sample IDs consistent.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="metrics-title">
+      <div class="section-head">
+        <div><div class="kicker">04 · Success and guardrails</div><h2 class="section-title" id="metrics-title">Measure speed without rewarding unsafe shortcuts.</h2></div>
+        <p class="section-intro">Definitions must be agreed before collecting evidence. Prototype-task results and operational downtime outcomes are different measures.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card metric-card"><span class="metric-type">Primary</span><h3>Time to correct information</h3><p>For a prototype task, time from receiving a standard defect clue to confirming the correct approved record and parameter. Define operational start/stop events separately.</p></article>
+        <article class="card metric-card"><span class="metric-type">Success signal</span><h3>Supervisor escalations</h3><p>Track escalations per eligible investigation start. Have a quality SME distinguish avoidable from necessary escalation; never discourage quality or safety escalation.</p></article>
+        <article class="card metric-card"><span class="metric-type">Diagnostic</span><h3>Completion and drop-off</h3><p>Correct record-and-parameter confirmations divided by all eligible starts. Report wrong selections, incomplete searches, abandonment and source failures separately.</p></article>
+      </div>
+      <article class="card" style="margin-top:16px"><span class="metric-type">Accuracy guardrail</span><h3>Verify the stated 96% before using it as a release threshold.</h3><p>Use an adjudicated answer set to define correct record-and-parameter selection. Confirm the 96% source, denominator, sample and method with a quality SME; stop pilot progression if the agreed guardrail is breached.</p></article>
+    </section>
+
+    <section class="section" id="backlog" aria-labelledby="backlog-title">
+      <div class="section-head">
+        <div><div class="kicker">05 · From product decisions to delivery</div><h2 class="section-title" id="backlog-title">A small Jira backlog with clear evidence gates.</h2></div>
+        <p class="section-intro">The Jira items are training artifacts in a practice project. They show how a product brief becomes measurable work, a user story, a usability test and a governed pilot.</p>
+      </div>
+      <div class="issue-list">
+        <div class="issue"><span class="issue-key">SCRUM-7</span><span><span class="issue-name">Define and baseline QI investigation measures</span><br><span class="issue-kind">Measurement contract · evidence and denominators</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
+        <div class="issue"><span class="issue-key">SCRUM-8</span><span><span class="issue-name">Search approved records and confirm selected parameter</span><br><span class="issue-kind">User story · read-only sources · build dependencies</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
+        <div class="issue"><span class="issue-key">SCRUM-9</span><span><span class="issue-name">Prototype and usability-test search, review and guidance flow</span><br><span class="issue-kind">Task-based validation · accessibility · pass criteria</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
+        <div class="issue"><span class="issue-key">SCRUM-10</span><span><span class="issue-name">Control mapping correction proposals and pilot release</span><br><span class="issue-kind">Conditional capability · role separation · rollback and audit</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="governance-title">
+      <div class="guardrail-panel">
+        <div class="kicker">06 · Governance and rollout</div>
+        <h2 id="governance-title">A proposed correction must never silently become a production change.</h2>
+        <p>The correction workflow remains separate from core search and enters a pilot only if need, feasibility and capacity are demonstrated.</p>
+        <div class="guardrail-grid">
+          <div class="guardrail"><strong>Separate roles</strong><span>Engineer proposes; an independent reviewer decides; a separate authorized publisher applies an approved change.</span></div>
+          <div class="guardrail"><strong>Trace every version</strong><span>Record old/new values, evidence, rationale, actors, timestamps, decision and a controlled rollback.</span></div>
+          <div class="guardrail"><strong>Pause on any breach</strong><span>Zero unapproved production mapping changes. Any occurrence pauses rollout and publishing and triggers investigation.</span></div>
+        </div>
+        <p>Resume only after the cause, impact, corrective action and designated quality/system-owner approval are documented. Pilot access requires tests, role separation, audit traceability, rollback rehearsal, a named owner and entry/exit criteria.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="prototype-title">
+      <div class="section-head">
+        <div><div class="kicker">07 · Current status</div><h2 class="section-title" id="prototype-title">An early concept, with the next learning steps visible.</h2></div>
+        <a class="text-link" href="https://8265f352-cd54-4637-9d47-6b8af6051007.lovableproject.com/" target="_blank" rel="noreferrer">Open the Lovable prototype ↗</a>
+      </div>
+      <div class="status-grid">
+        <div class="status-item"><strong>What exists</strong><span>Search-first clickable demo, fictional sample data, draft Jira backlog and this product case study.</span></div>
+        <div class="status-item"><strong>What remains to validate</strong><span>Current-state observation, source ownership and feasibility, accurate metric definitions, representative usability and accessibility testing.</span></div>
+        <div class="status-item"><strong>Not claimed</strong><span>No live system integration, customer-validated solution, measured time savings or production release.</span></div>
+        <div class="status-item"><strong>Next design iteration</strong><span>Show why each result matched, maintain consistent sample identifiers and test exact, contextual and exception scenarios.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="cv" aria-labelledby="cv-title">
+      <div class="card">
+        <div class="kicker">CV and contact</div>
+        <h2 class="section-title" id="cv-title" style="font-size:30px">Let’s talk about building useful products for complex workflows.</h2>
+        <p style="max-width:780px;margin:14px 0 0;color:var(--muted);font-size:14px">Download the CV or connect through the professional links below. Review the phone number and personal details before publishing this site publicly.</p>
+        <div class="actions"><a class="button button-light" style="background:var(--green);color:white" href="assets/CV_Manish_Sunkapur.pdf" download="Manish_Sunkapur_CV.pdf">Download my CV <span aria-hidden="true">↓</span></a></div>
+        <div class="contact-links" aria-label="Professional contact links">
+          <a href="mailto:sunkapurmanish@gmail.com">Email · sunkapurmanish@gmail.com</a>
+          <a href="tel:+918217612492">Call · +91 82176 12492</a>
+          <a href="https://www.linkedin.com/in/manish-sunkapur" target="_blank" rel="noreferrer">LinkedIn · manish-sunkapur ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><span>Er. Manish Sunkapur · Product Manager</span><span>Portfolio draft · Independent learning projects</span></div></footer>
+</body>
+</html>
