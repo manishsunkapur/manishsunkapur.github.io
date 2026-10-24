@@ -106,6 +106,11 @@
     .framework .card { padding: 20px; }
     .framework .step-label { color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
     .framework h3 { margin-top: 7px; }
+    .smart-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 9px; margin-top: 14px; }
+    .smart-item { padding: 12px; background: #f2f7f4; border-radius: 12px; }
+    .smart-item strong { display: block; color: var(--green); font-size: 12px; }
+    .smart-item span { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .status-label { display: inline-flex; margin-bottom: 9px; padding: 4px 8px; border-radius: 999px; color: var(--amber-ink); background: #fff3d9; font-size: 9px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
     .metric-card { min-height: 176px; }
     .metric-type { display: inline-block; margin-bottom: 12px; color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
     .issue-list { display: grid; gap: 9px; }
@@ -141,6 +146,7 @@
       .section-head { display: block; }
       .section-intro { margin-top: 13px; }
       .experience-card { grid-template-columns: 1fr; gap: 8px; }
+      .smart-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
     }
     @media (max-width: 560px) {
       .shell { width: min(100% - 26px, 1160px); }
@@ -150,7 +156,7 @@
       h1 { font-size: 39px; }
       .hero-copy { font-size: 15px; }
       .section { padding-top: 62px; }
-      .grid-2, .grid-3, .flow, .framework, .guardrail-grid, .status-grid { grid-template-columns: 1fr; }
+      .grid-2, .grid-3, .flow, .framework, .smart-grid, .guardrail-grid, .status-grid { grid-template-columns: 1fr; }
       .flow-step { min-height: auto; }
       .flow-step:not(:last-child)::after { top: auto; right: 16px; bottom: -15px; transform: rotate(90deg); }
       .flow-step:nth-child(2)::after { display: grid; }
@@ -257,108 +263,108 @@
 
     <section class="section" id="case-study" aria-labelledby="problem-title">
       <div class="section-head">
-        <div><div class="kicker">Project 01 · Quality Intelligence · 01 The problem</div><h2 class="section-title" id="problem-title">Finding the right report is part of the investigation.</h2></div>
-        <p class="section-intro">When production downtime occurs, operators can spend too long identifying the defect and deciding which report to pull. Newer engineers reportedly take longer than experienced engineers, and relevant information is split across two systems.</p>
+        <div><div class="kicker">Project 01 · Quality Intelligence · Problem framing</div><h2 class="section-title" id="problem-title">Help frontline teams find the right report during downtime.</h2></div>
+        <p class="section-intro">Prior discovery captured a need to identify defect type and retrieve the relevant report faster. This is a learning project using reported inputs and fictional prototype data.</p>
       </div>
-      <div class="grid-2">
-        <article class="card">
-          <h3>What we know so far</h3>
-          <p>Earlier project discussion reported a 50-minute median for newer engineers and 22 minutes for experienced engineers. Wrong record or parameter selection and weak SOP-to-information links were also reported.</p>
-          <p>These figures and observations still need source, cohort, sample and time-window verification. Downtime impact has not been quantified.</p>
-        </article>
-        <article class="card">
-          <h3>The user’s job to be done</h3>
-          <blockquote>When downtime occurs and I have a clue about the defect, help me identify it and verify the right report, record and parameter so I can continue the investigation faster without guessing or lowering accuracy.</blockquote>
-        </article>
+      <div class="grid-3">
+        <article class="card"><span class="metric-type">User + situation</span><h3>Operators and newer engineers</h3><p>Investigating a defect while production is stopped. Confirm whether these are one or two user groups.</p></article>
+        <article class="card"><span class="metric-type">Reported friction</span><h3>Finding and choosing information</h3><p>Wrong records or parameters, unreliable SOP links, and relevant information split across two systems.</p></article>
+        <article class="card"><span class="metric-type">Reported evidence</span><h3>50 vs 22 minutes</h3><p>Median investigation time for newer vs experienced engineers, as reported earlier. Source and method need verification; downtime cost is unknown.</p></article>
       </div>
-      <div class="callout" style="margin-top:16px"><strong>Evidence boundary:</strong> the summary comes from earlier project discussion, not a verbatim customer interview in this thread. The clickable demo is a concept, not a live manufacturing system.</div>
+      <div class="grid-2" style="margin-top:14px">
+        <article class="card"><span class="metric-type">Problem statement · user / need / outcome</span><h3>Make the correct next step easier to find.</h3><p>During downtime, help the investigator identify the defect and verify the relevant approved report and parameter, so investigation can continue without guesswork or reduced accuracy.</p></article>
+        <article class="card"><span class="metric-type">JTBD</span><h3>The job the user is trying to do</h3><p>“When downtime occurs and I have a clue, help me find and verify the right record and parameter so I can continue the investigation faster without guessing.”</p></article>
+      </div>
+      <article class="card" style="margin-top:14px"><span class="metric-type">SMART pilot objective · draft, not a committed target</span><h3>Reduce time to the correct confirmed record while preserving the stated accuracy guardrail.</h3><p>Make this measurable only after baseline, cohort, accuracy definition, pilot target and test window are agreed.</p><div class="smart-grid"><div class="smart-item"><strong>S · Specific</strong><span>Find and confirm the correct record + parameter.</span></div><div class="smart-item"><strong>M · Measurable</strong><span>Median time; accuracy; completion.</span></div><div class="smart-item"><strong>A · Achievable</strong><span>Set target after baseline and feasibility checks.</span></div><div class="smart-item"><strong>R · Relevant</strong><span>Addresses investigation delay and selection errors.</span></div><div class="smart-item"><strong>T · Time-bound</strong><span>Define pilot cohort and duration before testing.</span></div></div></article>
+      <div class="callout" style="margin-top:14px"><strong>Evidence boundary:</strong> these inputs came from prior project discussion, not a verbatim customer transcript. Figures are unverified; the demo is not connected to factory systems or validated with users.</div>
     </section>
 
     <section class="section" id="approach" aria-labelledby="approach-title">
       <div class="section-head">
-        <div><div class="kicker">02 · Product decisions</div><h2 class="section-title" id="approach-title">Investigate first. Choose a small, testable solution.</h2></div>
-        <p class="section-intro">I used the Double Diamond as a way to explain the work: understand the challenge, define the problem, develop and test options, then plan safe delivery.</p>
+        <div><div class="kicker">Product discovery · Double Diamond</div><h2 class="section-title" id="approach-title">Understand the work before choosing the solution.</h2></div>
+        <p class="section-intro">A simple path from reported problem to a small prototype and evidence-based release decision.</p>
       </div>
       <div class="framework">
-        <article class="card"><span class="step-label">Discover</span><h3>Understand the task</h3><p>Map who investigates, where time is lost, which systems and SOPs are used, and when people need help.</p></article>
-        <article class="card"><span class="step-label">Define</span><h3>Make success clear</h3><p>Frame the need as finding and confirming the correct record and parameter without reducing accuracy.</p></article>
-        <article class="card"><span class="step-label">Develop</span><h3>Compare approaches</h3><p>Start with guided retrieval and human confirmation; validate the flow before investing in prediction.</p></article>
-        <article class="card"><span class="step-label">Deliver</span><h3>Gate release on evidence</h3><p>Define metrics, source dependencies, quality tests, pilot access and incident response before release.</p></article>
+        <article class="card"><span class="step-label">Discover</span><h3>Observe the current task</h3><p>Who investigates, where time is lost, which reports and SOPs are used.</p></article>
+        <article class="card"><span class="step-label">Define</span><h3>Agree the problem + measures</h3><p>Correct record and parameter, faster, with accuracy protected.</p></article>
+        <article class="card"><span class="step-label">Develop</span><h3>Compare and test options</h3><p>Try guided retrieval with human confirmation before prediction.</p></article>
+        <article class="card"><span class="step-label">Deliver</span><h3>Gate rollout on evidence</h3><p>Verify sources, tests, roles, audit trail and pilot thresholds.</p></article>
       </div>
-      <div class="grid-3" style="margin-top:16px">
-        <article class="card decision"><span class="decision-num">01</span><h3>Search before guidance</h3><p>The engineer needs to identify the relevant record before an SOP or investigation guidance can be trusted.</p></article>
-        <article class="card decision"><span class="decision-num">02</span><h3>One clue, filters optional</h3><p>Start with what the engineer knows—ID, part, line, symptom or parameter—then narrow results if needed.</p></article>
-        <article class="card decision"><span class="decision-num">03</span><h3>Defer broad AI prediction</h3><p>The current evidence points to retrieval and selection problems. Prediction need, data readiness and validation are not established.</p></article>
+      <div class="grid-3" style="margin-top:14px">
+        <article class="card decision"><span class="decision-num">01</span><h3>Search before guidance</h3><p>Identify the applicable record before showing investigation guidance.</p></article>
+        <article class="card decision"><span class="decision-num">02</span><h3>One clue; filters optional</h3><p>Start with an ID, part, line, symptom or parameter; narrow only if needed.</p></article>
+        <article class="card decision"><span class="decision-num">03</span><h3>Defer broad AI prediction</h3><p>Retrieval is the current problem. Prediction need, data quality and validation are unproven.</p></article>
       </div>
     </section>
 
     <section class="section" aria-labelledby="flow-title">
       <div class="section-head">
-        <div><div class="kicker">03 · Proposed experience</div><h2 class="section-title" id="flow-title">Keep the engineer in control of every decision.</h2></div>
-        <p class="section-intro">The prototype flow makes the source and uncertainty visible, and it withholds guidance until the user confirms both the record and the parameter.</p>
+        <div><div class="kicker">Solution concept · current prototype</div><h2 class="section-title" id="flow-title">A guided flow that keeps the user in control.</h2></div>
+        <p class="section-intro">Current demo stages. Additional validation and supervisor steps are planned for the next iteration, pending build and verification.</p>
       </div>
-      <div class="flow" aria-label="Four-step guided investigation flow">
-        <article class="flow-step"><h3>Search</h3><p>Enter one clue. Search approved sources with optional filters.</p></article>
-        <article class="flow-step"><h3>Compare records</h3><p>See source, key details and why each candidate matched.</p></article>
-        <article class="flow-step"><h3>Review & confirm</h3><p>Select the record and parameter. Change either before confirming.</p></article>
-        <article class="flow-step"><h3>Open guidance</h3><p>Show approved guidance only after confirmation. Offer safe next steps for ambiguity or outages.</p></article>
+      <div class="flow" aria-label="Current four-step guided investigation flow">
+        <article class="flow-step"><h3>Search</h3><p>Enter one clue; add filters if useful.</p></article>
+        <article class="flow-step"><h3>Compare</h3><p>Review candidates by source and details.</p></article>
+        <article class="flow-step"><h3>Review</h3><p>Select a record and parameter before confirming.</p></article>
+        <article class="flow-step"><h3>Guidance</h3><p>Open the next approved step after confirmation.</p></article>
       </div>
-      <div class="grid-2" style="margin-top:18px">
-        <article class="card"><h3>Exception paths are part of the design</h3><p>Exact match, contextual match, ambiguous results, no results and a source outage each need a clear explanation and next action. A failed source must not look like a complete search.</p></article>
-        <article class="card"><h3>Prototype feedback changed the requirements</h3><p>In the demo, the fictional ID NC-2048 returned four candidates without explaining why. The next revision should show match reasons, distinguish exact from contextual evidence and keep sample IDs consistent.</p></article>
+      <div class="grid-2" style="margin-top:14px">
+        <article class="card"><span class="metric-type">Exception paths</span><h3>Make uncertainty actionable</h3><p>Exact or contextual match, ambiguous results, no results, wrong parameter, and unavailable source each need a clear next action. A failed source must not look like a complete search.</p></article>
+        <article class="card"><span class="status-label">Planned · verify after next build</span><h3>Report validation + supervisor support</h3><p>Check source, revision, status, freshness, applicability and completeness; then offer a documented supervisor review when evidence is insufficient. Keep decisions human-owned and auditable.</p></article>
       </div>
+      <div class="callout" style="margin-top:14px"><strong>Prototype finding:</strong> fictional NC-2048 returned four candidates without visible match reasons. Add evidence for each match and distinguish exact from contextual results. NC-2048 is sample data, not a customer record.</div>
     </section>
 
     <section class="section" aria-labelledby="metrics-title">
       <div class="section-head">
-        <div><div class="kicker">04 · Success and guardrails</div><h2 class="section-title" id="metrics-title">Measure speed without rewarding unsafe shortcuts.</h2></div>
-        <p class="section-intro">Definitions must be agreed before collecting evidence. Prototype-task results and operational downtime outcomes are different measures.</p>
+        <div><div class="kicker">Measurement framework · KPI + guardrails</div><h2 class="section-title" id="metrics-title">Improve speed without rewarding unsafe shortcuts.</h2></div>
+        <p class="section-intro">Prototype task timing and real downtime outcomes must be reported separately.</p>
       </div>
       <div class="grid-3">
-        <article class="card metric-card"><span class="metric-type">Primary</span><h3>Time to correct information</h3><p>For a prototype task, time from receiving a standard defect clue to confirming the correct approved record and parameter. Define operational start/stop events separately.</p></article>
-        <article class="card metric-card"><span class="metric-type">Success signal</span><h3>Supervisor escalations</h3><p>Track escalations per eligible investigation start. Have a quality SME distinguish avoidable from necessary escalation; never discourage quality or safety escalation.</p></article>
-        <article class="card metric-card"><span class="metric-type">Diagnostic</span><h3>Completion and drop-off</h3><p>Correct record-and-parameter confirmations divided by all eligible starts. Report wrong selections, incomplete searches, abandonment and source failures separately.</p></article>
+        <article class="card metric-card"><span class="metric-type">Primary KPI</span><h3>Time to correct information</h3><p>Median time from a standard clue to confirmation of the correct approved record and parameter.</p></article>
+        <article class="card metric-card"><span class="metric-type">Quality guardrail</span><h3>Accuracy ≥ 96%*</h3><p>User-stated threshold. Confirm definition, denominator, source and adjudicated test set with a quality SME.</p></article>
+        <article class="card metric-card"><span class="metric-type">Diagnostic signals</span><h3>Completion + escalation</h3><p>Correct confirmations / eligible starts; drop-off by step; supervisor escalations, separating avoidable from necessary.</p></article>
       </div>
-      <article class="card" style="margin-top:16px"><span class="metric-type">Accuracy guardrail</span><h3>Verify the stated 96% before using it as a release threshold.</h3><p>Use an adjudicated answer set to define correct record-and-parameter selection. Confirm the 96% source, denominator, sample and method with a quality SME; stop pilot progression if the agreed guardrail is breached.</p></article>
+      <div class="callout" style="margin-top:14px"><strong>Measurement rule:</strong> do not suppress a required quality/safety escalation to improve a metric. Define eligible starts and start/stop timestamps before comparing results.</div>
     </section>
 
     <section class="section" id="backlog" aria-labelledby="backlog-title">
       <div class="section-head">
-        <div><div class="kicker">05 · From product decisions to delivery</div><h2 class="section-title" id="backlog-title">A small Jira backlog with clear evidence gates.</h2></div>
-        <p class="section-intro">The Jira items are training artifacts in a practice project. They show how a product brief becomes measurable work, a user story, a usability test and a governed pilot.</p>
+        <div><div class="kicker">Delivery · Jira practice backlog</div><h2 class="section-title" id="backlog-title">Turn decisions into testable work.</h2></div>
+        <p class="section-intro">Practice items show the path from measurement and discovery to a reviewed prototype and controlled pilot.</p>
       </div>
       <div class="issue-list">
-        <div class="issue"><span class="issue-key">SCRUM-7</span><span><span class="issue-name">Define and baseline QI investigation measures</span><br><span class="issue-kind">Measurement contract · evidence and denominators</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
-        <div class="issue"><span class="issue-key">SCRUM-8</span><span><span class="issue-name">Search approved records and confirm selected parameter</span><br><span class="issue-kind">User story · read-only sources · build dependencies</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
-        <div class="issue"><span class="issue-key">SCRUM-9</span><span><span class="issue-name">Prototype and usability-test search, review and guidance flow</span><br><span class="issue-kind">Task-based validation · accessibility · pass criteria</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
-        <div class="issue"><span class="issue-key">SCRUM-10</span><span><span class="issue-name">Control mapping correction proposals and pilot release</span><br><span class="issue-kind">Conditional capability · role separation · rollback and audit</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
+        <div class="issue"><span class="issue-key">SCRUM-7</span><span><span class="issue-name">Define and baseline investigation measures</span><br><span class="issue-kind">Metric contract · sources, definitions, denominators</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
+        <div class="issue"><span class="issue-key">SCRUM-8</span><span><span class="issue-name">Search approved records and confirm a parameter</span><br><span class="issue-kind">User story · read-only access · human confirmation</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
+        <div class="issue"><span class="issue-key">SCRUM-9</span><span><span class="issue-name">Test the search-to-guidance workflow</span><br><span class="issue-kind">Usability tasks · exceptions · pass criteria</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
+        <div class="issue"><span class="issue-key">SCRUM-10</span><span><span class="issue-name">Govern correction proposals and pilot release</span><br><span class="issue-kind">Conditional · role separation · audit · rollback</span></span><span class="issue-arrow" aria-hidden="true">→</span></div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="governance-title">
       <div class="guardrail-panel">
-        <div class="kicker">06 · Governance and rollout</div>
-        <h2 id="governance-title">A proposed correction must never silently become a production change.</h2>
-        <p>The correction workflow remains separate from core search and enters a pilot only if need, feasibility and capacity are demonstrated.</p>
+        <div class="kicker">Release governance · independent control</div>
+        <h2 id="governance-title">A proposed correction never changes production by itself.</h2>
+        <p>Keep mapping corrections separate from core search. Include them in a pilot only if user need, feasibility and capacity are proven.</p>
         <div class="guardrail-grid">
-          <div class="guardrail"><strong>Separate roles</strong><span>Engineer proposes; an independent reviewer decides; a separate authorized publisher applies an approved change.</span></div>
-          <div class="guardrail"><strong>Trace every version</strong><span>Record old/new values, evidence, rationale, actors, timestamps, decision and a controlled rollback.</span></div>
-          <div class="guardrail"><strong>Pause on any breach</strong><span>Zero unapproved production mapping changes. Any occurrence pauses rollout and publishing and triggers investigation.</span></div>
+          <div class="guardrail"><strong>Separate roles</strong><span>Engineer proposes → independent reviewer approves or rejects → separate publisher applies.</span></div>
+          <div class="guardrail"><strong>Keep an audit trail</strong><span>Record before/after values, evidence, rationale, actors, timestamps, version and rollback.</span></div>
+          <div class="guardrail"><strong>Zero unapproved changes</strong><span>Any occurrence pauses rollout and publishing and triggers investigation.</span></div>
         </div>
-        <p>Resume only after the cause, impact, corrective action and designated quality/system-owner approval are documented. Pilot access requires tests, role separation, audit traceability, rollback rehearsal, a named owner and entry/exit criteria.</p>
+        <p>Resume only after cause, impact, corrective action and quality/system-owner approval are recorded.</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="prototype-title">
       <div class="section-head">
-        <div><div class="kicker">07 · Current status</div><h2 class="section-title" id="prototype-title">An early concept, with the next learning steps visible.</h2></div>
-        <a class="text-link" href="https://defect-detective-lab.lovable.app/" target="_blank" rel="noreferrer">Open the Quality Intelligence prototype ↗</a>
+        <div><div class="kicker">Status · evidence and next step</div><h2 class="section-title" id="prototype-title">A working concept—not a validated product.</h2></div>
+        <div><a class="text-link" href="https://defect-detective-lab.lovable.app/" target="_blank" rel="noreferrer">Try the QI prototype ↗</a><br><a class="text-link" href="https://app.amplitude.com/analytics/share/96bb9312949b495fb4632b8e00936a27" target="_blank" rel="noreferrer">View prototype analytics · test data ↗</a></div>
       </div>
       <div class="status-grid">
-        <div class="status-item"><strong>What exists</strong><span>Search-first clickable demo, fictional sample data, draft Jira backlog and this product case study.</span></div>
-        <div class="status-item"><strong>What remains to validate</strong><span>Current-state observation, source ownership and feasibility, accurate metric definitions, representative usability and accessibility testing.</span></div>
-        <div class="status-item"><strong>Not claimed</strong><span>No live system integration, customer-validated solution, measured time savings or production release.</span></div>
-        <div class="status-item"><strong>Next design iteration</strong><span>Show why each result matched, maintain consistent sample identifiers and test exact, contextual and exception scenarios.</span></div>
+        <div class="status-item"><strong>Available now</strong><span>Search-first demo with fictional data; shareable prototype; practice backlog.</span></div>
+        <div class="status-item"><strong>Next build to verify</strong><span>Match evidence, report validation, supervisor review, audit trail and investigation-level analytics.</span></div>
+        <div class="status-item"><strong>Still unknown</strong><span>Real-user usability, source access, operational baseline, target, accuracy method and downtime impact.</span></div>
+        <div class="status-item"><strong>Release decision</strong><span>Do not claim integration, time savings or production readiness before evidence and controls pass.</span></div>
       </div>
     </section>
 
