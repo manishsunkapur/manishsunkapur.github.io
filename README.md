@@ -1,29 +1,31 @@
 # Er. Manish Sunkapur — Product Manager Portfolio
 
-**Portfolio:** https://manishsunkapur.github.io/  ·  **CV:** [Download from portfolio](https://manishsunkapur.github.io/#cv)
+**Live portfolio:** [manishsunkapur.github.io](https://manishsunkapur.github.io/)  
+**Try the Quality Intelligence prototype:** [Open the demo](https://defect-detective-lab.lovable.app/)  
+**View prototype analytics:** [Amplitude chart · test data](https://app.amplitude.com/analytics/share/96bb9312949b495fb4632b8e00936a27)
 
-## Quality Intelligence
+Product work across industrial SaaS, manufacturing workflows and AI-enabled products. This static site uses HTML, CSS and JavaScript; it has no paid hosting, build step or tracking code.
 
-An independent product learning project for helping manufacturing investigators find and verify the right defect record and parameter during downtime.
+## Quality Intelligence case study
 
-- **Problem frame:** Reported median investigation time is 50 minutes for newer engineers vs 22 for experienced engineers; source and method need verification. Downtime impact is unknown.
-- **JTBD:** When downtime occurs and I have a clue, help me find and verify the right approved record and parameter so I can continue without guessing.
-- **Discovery:** Double Diamond — discover the current task, define the user problem and measures, develop options, then deliver only after evidence and controls pass.
-- **Product decision:** Search first; accept one clue with optional filters; show why records match; keep a human in control. Defer broad AI prediction until data, feasibility, validation and oversight are proven.
-- **SMART objective (draft):** Reduce median time to the correct confirmed information while maintaining the stated ≥96% accuracy guardrail. Baseline, cohort, accuracy definition, target and pilot duration still need agreement.
-- **Measures:** Primary — time to correct information. Guardrail — accuracy. Diagnostics — correct completion, step drop-off and supervisor escalations.
-- **Release governance:** Proposed mapping corrections require independent approval and publishing, evidence and audit history. Any unapproved production change pauses rollout and triggers investigation.
+- **Problem frame:** during downtime, help investigators identify the defect and find the correct approved report and parameter.
+- **JTBD:** find and verify the right record faster without guessing or reducing accuracy.
+- **Discovery:** Double Diamond to move from reported problem to a testable concept.
+- **Objective:** draft SMART outcome; baseline, target, cohort and test window still need agreement.
+- **Solution choice:** search first, one clue with optional filters, visible evidence and human confirmation; defer broad AI prediction.
+- **Measures:** operational time to correct information; the user-stated 96% accuracy guardrail (definition to verify); workflow completion and drop-off; and necessary versus avoidable supervisor escalations.
+- **Current Amplitude view:** seven-step prototype funnel from investigation start through search, results, record confirmation, report check and guidance. The last 30-day sample shows 5 test users starting and 1 reaching report check/guidance (20%). It counts unique users, not investigations or customers.
+- **Instrumentation limits:** this is fictional prototype traffic, not customer engagement or an operator baseline. `investigation_id` exists in the event schema, but consistent use across every step is unverified. Sample timings are not operational task times; no dedicated supervisor-review event is currently in the funnel.
+- **Release control:** independent proposal review and publishing, audit trail, rollback, and zero unapproved production mapping changes.
 
-### Try the work
+## Evidence boundary
 
-- [Try the Quality Intelligence prototype](https://defect-detective-lab.lovable.app/)
-- [View prototype analytics — fictional test data](https://app.amplitude.com/analytics/share/96bb9312949b495fb4632b8e00936a27)
+The case study is an independent learning project. The prototype uses fictional records and reported, unverified inputs. It does not claim customer validation, live factory integration, measured time savings or production release. Report checking and supervisor support are prototype demonstrations; the role switch is not real access control. The Amplitude chart measures workflow progression, not repeat engagement or verified product outcomes.
 
-**Evidence boundary:** Prototype records and analytics are fictional/test data. The 50/22-minute figures and 96% guardrail are reported inputs, not independently verified results. This project has no live factory integration or validated product impact. Report validation, supervisor review and investigation-level analytics remain planned until the next build is verified.
-
-## Repository files
+## Files
 
 - `index.html` — portfolio and case study.
-- `assets/` — CV and portrait.
+- `assets/CV_Manish_Sunkapur.pdf` — downloadable CV.
+- `assets/manish-sunkapur.jpg` — profile portrait.
 
-Edit the site files and commit to `main` to publish through GitHub Pages. Keep private Jira/Notion notes and confidential factory information out of this public repository.
+GitHub Pages publishes the repository root. Keep personal details accurate and do not add private Jira/Notion content or confidential factory information.
