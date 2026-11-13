@@ -71,6 +71,31 @@
     .section-intro { max-width: 520px; margin: 0; color: var(--muted); font-size: 15px; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .project-highlight { overflow: hidden; padding: 0; }
+    .project-art { display:block; aspect-ratio:1.78; overflow:hidden; border-bottom:1px solid var(--line); background:#eaf4ef; }
+    .project-art svg { display:block; width:100%; height:100%; }
+    .project-highlight-body { padding:21px; }
+    .project-highlight-body .metric-type { margin-bottom:9px; }
+    .project-highlight-body h3 { margin-bottom:9px; }
+    .project-highlight-body h3 a { color:var(--ink); text-decoration:none; }
+    .project-highlight-body h3 a:hover { color:var(--green); }
+    .project-highlight-body > p { min-height:64px; }
+    .project-highlight-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .project-highlight-links a { display:inline-flex; align-items:center; min-height:36px; padding:8px 11px; border:1px solid var(--line); border-radius:9px; color:var(--green); background:white; font-size:11px; font-weight:800; text-decoration:none; }
+    .project-highlight-links a.primary { border-color:var(--green); color:white; background:var(--green); }
+    .project-highlight-links a:hover { border-color:var(--green); }
+    .project-highlight-links a:focus-visible, .portfolio-link:focus-visible { outline:3px solid #8ac6aa; outline-offset:2px; }
+    .portfolio-links { display:grid; gap:8px; margin-top:17px; }
+    .portfolio-link { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 11px; border-radius:10px; color:var(--ink); background:#f1f6f3; font-size:11px; font-weight:750; text-decoration:none; }
+    .portfolio-link span:last-child { color:var(--green); white-space:nowrap; }
+    .reference-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:15px; background:white; }
+    .reference-table { width:100%; min-width:760px; border-collapse:collapse; }
+    .reference-table caption { padding:16px 18px; color:var(--muted); font-size:12px; text-align:left; }
+    .reference-table th, .reference-table td { padding:13px 16px; border-top:1px solid var(--line); text-align:left; vertical-align:top; font-size:12px; }
+    .reference-table thead th { color:var(--green-dark); background:#eff6f2; font-size:10px; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+    .reference-table tbody tr:nth-child(even) { background:#f9fbf9; }
+    .reference-table td:first-child { width:58px; color:var(--green); font-weight:850; }
+    .reference-note { margin:12px 0 0; color:var(--muted); font-size:12px; }
     .card { padding: 25px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 5px 20px rgba(18, 55, 45, .035); }
     .card h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.3; letter-spacing: -.025em; }
     .card p { margin: 0; color: var(--muted); font-size: 14px; }
@@ -207,6 +232,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#product-lifecycle">Process</a>
       <a href="#cv">CV</a>
       <a href="https://github.com/manishsunkapur/manishsunkapur.github.io" target="_blank" rel="noreferrer">GitHub ↗</a>
       <a href="https://defect-detective-lab.lovable.app/" target="_blank" rel="noreferrer">Lovable demo ↗</a>
@@ -224,21 +250,90 @@
           <div class="actions">
             <a class="button button-light" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
             <a class="button button-outline" href="assets/CV_Manish_Sunkapur.pdf" download="Manish_Sunkapur_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
-            <a class="button button-outline" href="https://defect-detective-lab.lovable.app/" target="_blank" rel="noreferrer">Try the QI prototype <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="/amtech-apb/prototype/">Try the APB prototype <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <aside class="project-card" aria-label="Profile and featured project">
+        <aside class="project-card" aria-label="Profile and portfolio projects">
           <div class="identity"><img class="portrait" src="assets/manish-sunkapur.jpg" alt="Portrait of Er. Manish Sunkapur"><div><h2>Er. Manish Sunkapur</h2><p>Product Manager · Industrial AI</p><p class="location">Hometown: Belgaum, Karnataka<br>CV location: Bengaluru, India</p></div></div>
-          <div class="card-top" style="margin-top:20px"><span class="project-icon">QI</span><span class="pill"><span class="dot"></span> Featured concept</span></div>
-          <h2>Quality Intelligence</h2>
-          <p>Guided defect investigation for manufacturing quality workflows.</p>
-          <div class="mini-stats">
-            <div class="mini-stat"><strong>50 → 22 min</strong><span>Reported newer vs experienced engineer median</span></div>
-            <div class="mini-stat"><strong>96%</strong><span>Accuracy guardrail stated for validation</span></div>
+          <div class="card-top" style="margin-top:20px"><span class="project-icon">PM</span><span class="pill"><span class="dot"></span> Three project studies</span></div>
+          <h2>From workflow to product decisions</h2>
+          <p>Quality investigation · customer onboarding · production scheduling.</p>
+          <div class="portfolio-links" aria-label="Open project prototypes">
+            <a class="portfolio-link" href="https://defect-detective-lab.lovable.app/" target="_blank" rel="noreferrer"><span>01 · Quality Intelligence</span><span>Prototype ↗</span></a>
+            <a class="portfolio-link" href="/launchlane/index.html"><span>02 · LaunchLane</span><span>Prototype ↗</span></a>
+            <a class="portfolio-link" href="/amtech-apb/prototype/"><span>03 · Downtime Recovery</span><span>Prototype ↗</span></a>
           </div>
-          <p class="note">Reported inputs, not independently verified results. The prototype uses fictional records.</p>
+          <p class="note">Concepts use fictional scenarios where noted. Results and assumptions are labeled by evidence status.</p>
         </aside>
       </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <div><div class="kicker">Selected projects · 01–03</div><h2 class="section-title" id="projects-title">Three product problems, three ways to build confidence.</h2></div>
+        <p class="section-intro">Explore quality investigation, customer onboarding, and production scheduling. Each project separates assumptions, product decisions, measures, and evidence.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card project-highlight">
+          <a class="project-art" href="#case-study" aria-label="Open the Quality Intelligence case study"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<rect width="480" height="230" fill="#e7f2ec"/><circle cx="410" cy="35" r="70" fill="#d4e9dc"/>
+<rect x="28" y="20" width="424" height="190" rx="18" fill="#fff" stroke="#d8e3df"/>
+<path d="M46 20h388a18 18 0 0 1 18 18v22H28V38a18 18 0 0 1 18-18Z" fill="#123d35"/>
+<circle cx="49" cy="39" r="4" fill="#9ed6bf"/><circle cx="63" cy="39" r="4" fill="#78b99a"/><rect x="90" y="35" width="116" height="7" rx="3.5" fill="#d9eae2"/>
+<rect x="46" y="74" width="94" height="120" rx="10" fill="#f3f7f4"/><rect x="58" y="90" width="58" height="7" rx="3" fill="#bdd7ca"/><rect x="58" y="108" width="68" height="20" rx="6" fill="#dcefe5"/><rect x="58" y="140" width="62" height="7" rx="3" fill="#d1dcd6"/><rect x="58" y="158" width="50" height="7" rx="3" fill="#d1dcd6"/>
+<rect x="155" y="74" width="277" height="54" rx="10" fill="#fbfdfb" stroke="#e3ebe6"/><circle cx="177" cy="101" r="10" fill="#e7f2ec"/><path d="M173 101h8m-4-4v8" stroke="#17634f" stroke-width="2" stroke-linecap="round"/><rect x="198" y="88" width="100" height="7" rx="3" fill="#667e73"/><rect x="198" y="103" width="157" height="6" rx="3" fill="#c8d6ce"/><rect x="375" y="91" width="42" height="20" rx="10" fill="#e5f2e9"/>
+<rect x="155" y="140" width="277" height="54" rx="10" fill="#fff" stroke="#dce8e1"/><rect x="170" y="152" width="34" height="30" rx="7" fill="#f1e9d9"/><path d="M179 174l6-11 5 7 6-6" fill="none" stroke="#a76a1c" stroke-width="2" stroke-linecap="round"/><rect x="216" y="152" width="96" height="7" rx="3" fill="#36594c"/><rect x="216" y="167" width="130" height="6" rx="3" fill="#c8d6ce"/><rect x="364" y="156" width="54" height="20" rx="7" fill="#17634f"/>
+</svg></a>
+          <div class="project-highlight-body"><span class="metric-type">Project 01 · Industrial quality</span><h3><a href="#case-study">Quality Intelligence</a></h3><p>Guide an investigator from a defect signal to the right approved report and parameter.</p><div class="project-highlight-links"><a href="#case-study">Case study</a><a class="primary" href="https://defect-detective-lab.lovable.app/" target="_blank" rel="noreferrer">Try prototype ↗</a></div></div>
+        </article>
+        <article class="card project-highlight">
+          <a class="project-art" href="/launchlane/case-study.html" aria-label="Open the LaunchLane case study"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<rect width="480" height="230" fill="#edf1fa"/><circle cx="62" cy="196" r="88" fill="#dfe7f6"/>
+<rect x="28" y="20" width="424" height="190" rx="18" fill="#fff" stroke="#d8e1ed"/><rect x="28" y="20" width="424" height="42" rx="18" fill="#253b5b"/><path d="M28 44h424v18H28z" fill="#253b5b"/>
+<circle cx="50" cy="41" r="5" fill="#b9d6c3"/><rect x="66" y="37" width="118" height="8" rx="4" fill="#d8e1ed"/>
+<rect x="45" y="78" width="87" height="116" rx="10" fill="#f5f7fb"/><rect x="58" y="92" width="61" height="7" rx="3.5" fill="#c3ccdd"/><rect x="58" y="111" width="57" height="18" rx="6" fill="#e3ebf8"/><rect x="58" y="143" width="52" height="7" rx="3.5" fill="#d2d9e6"/><rect x="58" y="161" width="60" height="7" rx="3.5" fill="#d2d9e6"/>
+<path d="M158 108h246" stroke="#b6c9df" stroke-width="4" stroke-linecap="round"/><path d="M210 108h132" stroke="#5d9a79" stroke-width="4" stroke-linecap="round"/>
+<circle cx="160" cy="108" r="9" fill="#17634f"/><circle cx="241" cy="108" r="9" fill="#17634f"/><circle cx="322" cy="108" r="9" fill="#e4aa4b"/><circle cx="403" cy="108" r="9" fill="#fff" stroke="#b6c9df" stroke-width="3"/>
+<rect x="148" y="130" width="72" height="52" rx="8" fill="#f4f8f5" stroke="#dce8e1"/><rect x="229" y="130" width="72" height="52" rx="8" fill="#f4f8f5" stroke="#dce8e1"/><rect x="310" y="130" width="72" height="52" rx="8" fill="#fff8e9" stroke="#f0dcae"/><rect x="391" y="130" width="39" height="52" rx="8" fill="#fafbfd" stroke="#e3e8f0"/>
+<rect x="159" y="142" width="38" height="6" rx="3" fill="#6d7f9b"/><rect x="159" y="156" width="49" height="5" rx="2.5" fill="#c8d1df"/><rect x="240" y="142" width="39" height="6" rx="3" fill="#6d7f9b"/><rect x="240" y="156" width="49" height="5" rx="2.5" fill="#c8d1df"/><rect x="321" y="142" width="38" height="6" rx="3" fill="#9b752c"/><rect x="321" y="156" width="49" height="5" rx="2.5" fill="#e2cf9b"/>
+</svg></a>
+          <div class="project-highlight-body"><span class="metric-type">Project 02 · B2B onboarding</span><h3><a href="/launchlane/case-study.html">LaunchLane</a></h3><p>Coordinate customer onboarding steps, owners, blockers, and progress toward first value.</p><div class="project-highlight-links"><a href="/launchlane/case-study.html">Case study</a><a class="primary" href="/launchlane/index.html">Try prototype ↗</a></div></div>
+        </article>
+        <article class="card project-highlight">
+          <a class="project-art" href="/amtech-apb/case-study.html" aria-label="Open the Amtech APB downtime recovery case study"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<rect width="480" height="230" fill="#eaf3f8"/><circle cx="422" cy="190" r="82" fill="#d9eaf2"/>
+<rect x="28" y="20" width="424" height="190" rx="18" fill="#fff" stroke="#d8e3e8"/><rect x="28" y="20" width="424" height="40" rx="18" fill="#183c55"/><path d="M28 44h424v16H28z" fill="#183c55"/>
+<circle cx="50" cy="40" r="5" fill="#a9d7c1"/><rect x="66" y="36" width="135" height="8" rx="4" fill="#dce9ef"/>
+<rect x="45" y="76" width="108" height="14" rx="5" fill="#edf3f6"/><rect x="165" y="76" width="78" height="14" rx="5" fill="#edf3f6"/><rect x="254" y="76" width="82" height="14" rx="5" fill="#edf3f6"/><rect x="347" y="76" width="86" height="14" rx="5" fill="#edf3f6"/>
+<rect x="45" y="102" width="388" height="1" fill="#e2e8ec"/>
+<rect x="45" y="113" width="64" height="8" rx="4" fill="#9aabb4"/><rect x="119" y="108" width="82" height="18" rx="6" fill="#8bc0a2"/><rect x="211" y="108" width="93" height="18" rx="6" fill="#77afd0"/><rect x="314" y="108" width="83" height="18" rx="6" fill="#c9d6dc"/>
+<rect x="45" y="140" width="64" height="8" rx="4" fill="#9aabb4"/><rect x="119" y="135" width="93" height="18" rx="6" fill="#dbe8ee"/><rect x="222" y="135" width="72" height="18" rx="6" fill="#e8ae55"/><rect x="304" y="135" width="92" height="18" rx="6" fill="#78b99a"/>
+<rect x="45" y="167" width="64" height="8" rx="4" fill="#9aabb4"/><rect x="119" y="162" width="64" height="18" rx="6" fill="#8bc0a2"/><rect x="193" y="162" width="103" height="18" rx="6" fill="#77afd0"/><rect x="306" y="162" width="90" height="18" rx="6" fill="#dbe8ee"/>
+<path d="M217 102v80" stroke="#a65c0a" stroke-width="2" stroke-dasharray="4 4"/><circle cx="217" cy="103" r="5" fill="#a65c0a"/>
+</svg></a>
+          <div class="project-highlight-body"><span class="metric-type">Project 03 · Scheduling concept</span><h3><a href="/amtech-apb/case-study.html">Amtech APB · Downtime Recovery</a></h3><p>Help schedulers compare the current lineup with a proposed recovery after a converting-line disruption.</p><div class="project-highlight-links"><a href="/amtech-apb/case-study.html">Case study</a><a class="primary" href="/amtech-apb/prototype/">Try prototype ↗</a></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="product-lifecycle" aria-labelledby="lifecycle-title">
+      <div class="section-head"><div><div class="kicker">Product management playbook</div><h2 class="section-title" id="lifecycle-title">Quick Reference Table: Step-by-Step Summary</h2></div><p class="section-intro">A repeatable path from problem statement to delivery and analytics review. Frameworks support the work; customer evidence and outcome measures guide decisions.</p></div>
+      <div class="reference-wrap" role="region" aria-label="Product management lifecycle table" tabindex="0">
+        <table class="reference-table">
+          <caption>Strategy, discovery, scope, documentation, validation, breakdown, and growth.</caption>
+          <thead><tr><th scope="col">Order</th><th scope="col">PM Stage</th><th scope="col">Key Deliverables</th><th scope="col">Best Frameworks</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>Strategy</strong></td><td>Quarterly goals, vision</td><td>OKRs, SMART</td></tr>
+            <tr><td>2</td><td><strong>Discovery</strong></td><td>Problem statement, user insights, pain points</td><td>JTBD, 5 Whys</td></tr>
+            <tr><td>3</td><td><strong>Prioritization</strong></td><td>Roadmap, MVP scope</td><td>RICE, MoSCoW</td></tr>
+            <tr><td>4</td><td><strong>Documentation</strong></td><td>PRD, success metrics</td><td>Opportunity Solution Tree</td></tr>
+            <tr><td>5</td><td><strong>Prototyping</strong></td><td>Wireframes, usability feedback</td><td>Design Thinking, HEART</td></tr>
+            <tr><td>6</td><td><strong>Breakdown</strong></td><td>Epics, user stories, acceptance criteria</td><td>INVEST, Given–When–Then</td></tr>
+            <tr><td>7</td><td><strong>Delivery &amp; Growth</strong></td><td>Release readiness, instrumentation, analytics review</td><td>Scrum, AARRR*</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="reference-note">Frameworks overlap in practice. Use the Opportunity Solution Tree to connect outcomes, opportunities, solutions, and experiments. AARRR is useful when a growth question is relevant; operational B2B products also need task success, customer outcome, and guardrail measures.</p>
     </section>
 
     <section class="section" id="profile" aria-labelledby="profile-title">
@@ -280,16 +375,7 @@
       <div class="grid-2" style="margin-top:16px"><article class="card"><span class="metric-type">Professional development</span><h3>Certifications and programs</h3><p>Atlassian Jira Agile Management — listed as certified/proficient on the CV. McKinsey Forward Program — completed.</p></article><article class="card"><span class="metric-type">Education</span><h3>Engineering foundation + business training</h3><p>MBA, Marketing & Systems Management — Dayananda Sagar Institutions, 2020.<br>B.E., Information Science & Engineering — SDM College of Engineering & Technology, 2018.</p></article></div>
     </section>
 
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-head">
-        <div><div class="kicker">Selected projects</div><h2 class="section-title" id="projects-title">Case studies that show the reasoning behind the work.</h2></div>
-        <p class="section-intro">Each project can use the same structure: problem and evidence, user job, options and trade-offs, solution, measures, validation, delivery and what changed.</p>
-      </div>
-      <div class="grid-2">
-        <a class="card text-link" href="#case-study" style="text-decoration:none"><span class="metric-type">Project 01 · In progress</span><h3>Quality Intelligence</h3><p>Help manufacturing quality engineers find and verify the right investigation record during downtime.</p><p><strong>View the case study ↓</strong></p></a>
-        <a class="card text-link" href="/launchlane/case-study.html" style="text-decoration:none"><span class="metric-type">Project 02 · Product concept</span><h3>LaunchLane</h3><p>Explore a B2B SaaS onboarding coordination layer designed to complement existing ticketing, CRM, and project tools—plus its users, JTBD, MVP choices, measures, and validation plan.</p><p><strong>Read the case study and open the prototype ↗</strong></p></a>
-      </div>
-    </section>
+    
 
     <section class="section" id="case-study" aria-labelledby="problem-title">
       <div class="section-head">
